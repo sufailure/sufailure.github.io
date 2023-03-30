@@ -23,93 +23,93 @@
 <meta property="og:site_name" content="sufailure">
 <meta property="og:description" content="Lecture2-处理器管理 处理器管理是操作系统的重要组成部分 处理器负责管理、调度和分配计算机系统的重要资源，并控制程序执行 处理器管理中最重要的是处理器调度，即进程调度，也就是控制、协调进程对处理器的竞争。   进程与线程 进程是资源分配和管理的单位 线程是处理器调度的基本单位。   管态与目态 管态又叫特权态(内核态、核心态)，可以执行特权指令，执行资源管理程序、为应用程序执行提供良好运行">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://sufailure.github.io/1.png">
-<meta property="og:image" content="https://sufailure.github.io/4.png">
-<meta property="og:image" content="https://sufailure.github.io/31.png">
-<meta property="og:image" content="https://sufailure.github.io/29.png">
-<meta property="og:image" content="https://sufailure.github.io/30.png">
-<meta property="og:image" content="https://sufailure.github.io/image-20230313103109912.png">
-<meta property="og:image" content="https://sufailure.github.io/image-20230313103143600.png">
-<meta property="og:image" content="https://sufailure.github.io/image-20230313104119877.png">
-<meta property="og:image" content="https://sufailure.github.io/11.png">
-<meta property="og:image" content="https://sufailure.github.io/12.png">
-<meta property="og:image" content="https://sufailure.github.io/2.png">
-<meta property="og:image" content="https://sufailure.github.io/3.png">
-<meta property="og:image" content="https://sufailure.github.io/25.png">
-<meta property="og:image" content="https://sufailure.github.io/5.png">
-<meta property="og:image" content="https://sufailure.github.io/6.png">
-<meta property="og:image" content="https://sufailure.github.io/7.png">
-<meta property="og:image" content="https://sufailure.github.io/26.png">
-<meta property="og:image" content="https://sufailure.github.io/8.png">
-<meta property="og:image" content="https://sufailure.github.io/33.png">
-<meta property="og:image" content="https://sufailure.github.io/14.png">
-<meta property="og:image" content="https://sufailure.github.io/13.png">
-<meta property="og:image" content="https://sufailure.github.io/9.png">
-<meta property="og:image" content="https://sufailure.github.io/32.png">
-<meta property="og:image" content="https://sufailure.github.io/80.png">
-<meta property="og:image" content="https://sufailure.github.io/10.png">
-<meta property="og:image" content="https://sufailure.github.io/15.png">
-<meta property="og:image" content="https://sufailure.github.io/16.png">
-<meta property="og:image" content="https://sufailure.github.io/17.png">
-<meta property="og:image" content="https://sufailure.github.io/18.png">
-<meta property="og:image" content="https://sufailure.github.io/19.png">
-<meta property="og:image" content="https://sufailure.github.io/20.png">
-<meta property="og:image" content="https://sufailure.github.io/21.png">
-<meta property="og:image" content="https://sufailure.github.io/28.png">
-<meta property="og:image" content="https://sufailure.github.io/34.png">
-<meta property="og:image" content="https://sufailure.github.io/22.png">
-<meta property="og:image" content="https://sufailure.github.io/23.png">
-<meta property="og:image" content="https://sufailure.github.io/35.png">
-<meta property="og:image" content="https://sufailure.github.io/38.png">
-<meta property="og:image" content="https://sufailure.github.io/47.png">
-<meta property="og:image" content="https://sufailure.github.io/48.png">
-<meta property="og:image" content="https://sufailure.github.io/49.png">
-<meta property="og:image" content="https://sufailure.github.io/36.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/1.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/4.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/31.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/29.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/30.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/image-20230313103109912-1680145370392.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/image-20230313103143600-1680145370393.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/image-20230313104119877-1680145370393.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/11.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/12.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/2.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/3.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/25.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/5.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/6.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/7.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/26.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/8.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/33.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/14.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/13.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/9.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/32.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/80.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/10.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/15.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/16.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/17.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/18.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/19.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/20.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/21.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/28.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/34.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/22.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/23.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/35.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/38.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/47.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/48.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/49.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/36.png">
 <meta property="og:image" content="https://spricoder.oss-cn-shanghai.aliyuncs.com/2020-OS/https://spricoder.oss-cn-shanghai.aliyuncs.com/2020-OS/img/lec2/39.png">
 <meta property="og:image" content="https://spricoder.oss-cn-shanghai.aliyuncs.com/2020-OS/https://spricoder.oss-cn-shanghai.aliyuncs.com/2020-OS/img/lec2/39.png">
-<meta property="og:image" content="https://sufailure.github.io/40.png">
-<meta property="og:image" content="https://sufailure.github.io/41.png">
-<meta property="og:image" content="https://sufailure.github.io/42.png">
-<meta property="og:image" content="https://sufailure.github.io/43.png">
-<meta property="og:image" content="https://sufailure.github.io/44.png">
-<meta property="og:image" content="https://sufailure.github.io/45.png">
-<meta property="og:image" content="https://sufailure.github.io/46.png">
-<meta property="og:image" content="https://sufailure.github.io/50.png">
-<meta property="og:image" content="https://sufailure.github.io/51.png">
-<meta property="og:image" content="https://sufailure.github.io/52.png">
-<meta property="og:image" content="https://sufailure.github.io/53.png">
-<meta property="og:image" content="https://sufailure.github.io/54.png">
-<meta property="og:image" content="https://sufailure.github.io/55.png">
-<meta property="og:image" content="https://sufailure.github.io/56.png">
-<meta property="og:image" content="https://sufailure.github.io/57.png">
-<meta property="og:image" content="https://sufailure.github.io/58.png">
-<meta property="og:image" content="https://sufailure.github.io/59.png">
-<meta property="og:image" content="https://sufailure.github.io/60.png">
-<meta property="og:image" content="https://sufailure.github.io/61.png">
-<meta property="og:image" content="https://sufailure.github.io/62.png">
-<meta property="og:image" content="https://sufailure.github.io/63.png">
-<meta property="og:image" content="https://sufailure.github.io/64.png">
-<meta property="og:image" content="https://sufailure.github.io/65.png">
-<meta property="og:image" content="https://sufailure.github.io/66.png">
-<meta property="og:image" content="https://sufailure.github.io/67.png">
-<meta property="og:image" content="https://sufailure.github.io/68.png">
-<meta property="og:image" content="https://sufailure.github.io/69.png">
-<meta property="og:image" content="https://sufailure.github.io/70.png">
-<meta property="og:image" content="https://sufailure.github.io/71.png">
-<meta property="og:image" content="https://sufailure.github.io/72.png">
-<meta property="og:image" content="https://sufailure.github.io/24.png">
-<meta property="og:image" content="https://sufailure.github.io/74.png">
-<meta property="og:image" content="https://sufailure.github.io/75.png">
-<meta property="og:image" content="https://sufailure.github.io/78.png">
-<meta property="og:image" content="https://sufailure.github.io/76.png">
-<meta property="og:image" content="https://sufailure.github.io/77.png">
-<meta property="og:image" content="https://sufailure.github.io/78.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/40.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/41.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/42.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/43.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/44.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/45.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/46.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/50.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/51.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/52.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/53.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/54.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/55.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/56.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/57.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/58.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/59.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/60.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/61.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/62.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/63.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/64.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/65.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/66.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/67.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/68.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/69.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/70.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/71.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/72.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/24.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/74.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/75.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/78.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/76.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/77.png">
+<meta property="og:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/78.png">
 <meta property="article:published_time" content="2023-03-30T02:51:26.000Z">
-<meta property="article:modified_time" content="2023-03-30T02:56:51.934Z">
+<meta property="article:modified_time" content="2023-03-30T03:03:40.486Z">
 <meta property="article:author" content="Saisai Zhu">
 <meta property="article:tag" content="学习">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://sufailure.github.io/1.png">
+<meta name="twitter:image" content="https://sufailure.github.io/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/1.png">
   
   
   
@@ -342,7 +342,7 @@
         
         
         
-          204 分钟
+          202 分钟
         
       </span>
     
@@ -410,24 +410,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="Lecture2-处理器管理-1"><a href="#Lecture2-处理器管理-1" class="headerlink" title="Lecture2-处理器管理"></a>Lecture2-处理器管理</h2><ol>
-<li><strong>处理器管理</strong>是操作系统的重要组成部分<ol>
-<li>处理器负责<strong>管理、调度和分配</strong>计算机系统的重要资源，并控制程序执行</li>
-<li>处理器管理中最重要的是<strong>处理器调度</strong>，即进程调度，也就是控制、协调进程对处理器的竞争。</li>
-</ol>
-</li>
-<li>进程与线程<ol>
-<li>进程是资源分配和管理的单位</li>
-<li>线程是处理器调度的基本单位。</li>
-</ol>
-</li>
-<li>管态与目态<ol>
-<li>管态又叫特权态(内核态、核心态)，可以执行特权指令，执行资源管理程序、为应用程序执行提供良好运行环境的各种原语等。</li>
-<li>目态又叫用户态(普通态)，只能执行非特权指令</li>
-</ol>
-</li>
-</ol>
-<h1 id="1-处理器和寄存器"><a href="#1-处理器和寄存器" class="headerlink" title="1. 处理器和寄存器"></a>1. 处理器和寄存器</h1><h2 id="1-1-处理器"><a href="#1-1-处理器" class="headerlink" title="1.1. 处理器"></a>1.1. 处理器</h2><p><img src="/1.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="1-处理器和寄存器"><a href="#1-处理器和寄存器" class="headerlink" title="1. 处理器和寄存器"></a>1. 处理器和寄存器</h1><h2 id="1-1-处理器"><a href="#1-1-处理器" class="headerlink" title="1.1. 处理器"></a>1.1. 处理器</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/1.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>部件简单示意图</p>
 </blockquote>
@@ -520,7 +503,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="2-3-指令执行周期与指令流水线"><a href="#2-3-指令执行周期与指令流水线" class="headerlink" title="2.3. 指令执行周期与指令流水线"></a>2.3. 指令执行周期与指令流水线</h2><p><img src="/4.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="2-3-指令执行周期与指令流水线"><a href="#2-3-指令执行周期与指令流水线" class="headerlink" title="2.3. 指令执行周期与指令流水线"></a>2.3. 指令执行周期与指令流水线</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/4.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>现在的操作系统不是顺序地完成指令执行，而是选择使用指令流水线的方式来执行指令</p>
 </blockquote>
@@ -564,12 +547,12 @@
 <li>我们可以认为中断和异常是用户态到内核态转换的仅有途径。</li>
 <li>OS内核处理完成后，调用中断返回指令(如Intel的iret)触发：<code>内核模式-&gt;用户模式</code>，操作系统将控制权转交给应用进程。</li>
 </ol>
-<p><img src="/31.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/31.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="2-7-系统调用示例"><a href="#2-7-系统调用示例" class="headerlink" title="2.7. 系统调用示例"></a>2.7. 系统调用示例</h2><table>
 <thead>
 <tr>
-<th><img src="/29.png" srcset="/img/loading.gif" lazyload></th>
-<th><img src="/30.png" srcset="/img/loading.gif" lazyload></th>
+<th><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/29.png" srcset="/img/loading.gif" lazyload></th>
+<th><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/30.png" srcset="/img/loading.gif" lazyload></th>
 </tr>
 </thead>
 </table>
@@ -587,8 +570,8 @@
 <li>硬件栈指针只有一个</li>
 </ol>
 <h1 id="4-中断"><a href="#4-中断" class="headerlink" title="4. 中断"></a>4. 中断</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yusiguyuan/article/details/23517819">(21条消息) linux内核分析–中断的分类_鱼思故渊的博客-CSDN博客</a></p>
-<p><img src="/image-20230313103109912.png" srcset="/img/loading.gif" lazyload alt="image-20230313103109912"></p>
-<p><img src="/image-20230313103143600.png" srcset="/img/loading.gif" lazyload alt="image-20230313103143600"></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/image-20230313103109912-1680145370392.png" srcset="/img/loading.gif" lazyload alt="image-20230313103109912"></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/image-20230313103143600-1680145370393.png" srcset="/img/loading.gif" lazyload alt="image-20230313103143600"></p>
 <h2 id="4-1-中断、异常和系统异常"><a href="#4-1-中断、异常和系统异常" class="headerlink" title="4.1. 中断、异常和系统异常"></a>4.1. 中断、异常和系统异常</h2><ol>
 <li><strong>广义的中断</strong>是指程序执行过程中，遇到急需处理的事件时，暂时<strong>中止CPU</strong>上现行程序的运行，转去执行相应的事件处理程序，待处理完成后再返回原程序被中断处或调度其他程序执行的过程</li>
 <li><strong>狭义的中断</strong>指来源于<strong>处理器之外的中断事件</strong>，即与当前运行指令无关的中断事件，如I&#x2F;O中断(为打印机结束后进行善后)、时钟中断(计算机系统计时，多一段时间就要更新系统时间)、外部信号中断(关机)等</li>
@@ -704,7 +687,7 @@
 </ol>
 </li>
 </ol>
-<h1 id="6-中断系统"><a href="#6-中断系统" class="headerlink" title="6. 中断系统"></a>6. 中断系统</h1><p><img src="/image-20230313104119877.png" srcset="/img/loading.gif" lazyload alt="image-20230313104119877"></p>
+<h1 id="6-中断系统"><a href="#6-中断系统" class="headerlink" title="6. 中断系统"></a>6. 中断系统</h1><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/image-20230313104119877-1680145370393.png" srcset="/img/loading.gif" lazyload alt="image-20230313104119877"></p>
 <ol>
 <li>中断系统是计算机系统中响应和处理中断的系统，包括硬件子系统和软件子系统两部分<ol>
 <li><strong>中断响应</strong>由硬件子系统完成</li>
@@ -713,7 +696,7 @@
 </li>
 <li>中断系统是操作系统的基础，中断系统也是软硬件协同系统的典型例子</li>
 </ol>
-<h2 id="6-1-中断响应处理与指令执行周期"><a href="#6-1-中断响应处理与指令执行周期" class="headerlink" title="6.1. 中断响应处理与指令执行周期"></a>6.1. 中断响应处理与指令执行周期</h2><p><img src="/11.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="6-1-中断响应处理与指令执行周期"><a href="#6-1-中断响应处理与指令执行周期" class="headerlink" title="6.1. 中断响应处理与指令执行周期"></a>6.1. 中断响应处理与指令执行周期</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/11.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>在指令执行周期最后增加一个微操作，以响应中断，CPU在完成执行阶段后，如果允许中断，则进入中断阶段</p>
 <p>注意是指令周期的最后检查中断</p>
@@ -765,7 +748,7 @@
 <li>情况二：对于其他一些中断，需要中断当前进程的运行，调整进程队列，启动进程调度，选择下一个执行的进程并恢复其执行，比如请求输入输出。</li>
 <li>无论是哪个都是从内核态到用户态。</li>
 </ol>
-<h2 id="6-7-中断系统处理流程"><a href="#6-7-中断系统处理流程" class="headerlink" title="6.7. 中断系统处理流程"></a>6.7. 中断系统处理流程</h2><p><img src="/12.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="6-7-中断系统处理流程"><a href="#6-7-中断系统处理流程" class="headerlink" title="6.7. 中断系统处理流程"></a>6.7. 中断系统处理流程</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/12.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>硬件设计受到操作系统的要求。</li>
 <li>操作系统:大型软件系统，大型紧密结合软硬件设备的系统。</li>
@@ -808,18 +791,18 @@
 <li>中断可以<strong>嵌套</strong>处理, 但嵌套的层数应有限制</li>
 <li>中断的嵌套处理改变了中断处理的次序</li>
 </ol>
-<h2 id="7-5-多重中断处理"><a href="#7-5-多重中断处理" class="headerlink" title="7.5. 多重中断处理"></a>7.5. 多重中断处理</h2><h3 id="7-5-1-顺序中断处理-串行处理"><a href="#7-5-1-顺序中断处理-串行处理" class="headerlink" title="7.5.1. 顺序中断处理(串行处理)"></a>7.5.1. 顺序中断处理(串行处理)</h3><p><img src="/2.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="7-5-多重中断处理"><a href="#7-5-多重中断处理" class="headerlink" title="7.5. 多重中断处理"></a>7.5. 多重中断处理</h2><h3 id="7-5-1-顺序中断处理-串行处理"><a href="#7-5-1-顺序中断处理-串行处理" class="headerlink" title="7.5.1. 顺序中断处理(串行处理)"></a>7.5.1. 顺序中断处理(串行处理)</h3><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/2.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>X、Y两个中断同时发生，如下图所以，系统先响应X，屏蔽Y，待X响应完成后，系统再响应并处理Y</p>
 </blockquote>
-<h3 id="7-5-2-嵌套中断处理-嵌套处理"><a href="#7-5-2-嵌套中断处理-嵌套处理" class="headerlink" title="7.5.2. 嵌套中断处理(嵌套处理)"></a>7.5.2. 嵌套中断处理(嵌套处理)</h3><p><img src="/3.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="7-5-2-嵌套中断处理-嵌套处理"><a href="#7-5-2-嵌套中断处理-嵌套处理" class="headerlink" title="7.5.2. 嵌套中断处理(嵌套处理)"></a>7.5.2. 嵌套中断处理(嵌套处理)</h3><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/3.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>X、Y两个中断同时发生，根据中断有限级，先响应中断X，因为没有屏蔽Y，则响应并处理Y，处理Y完成后，再处理X。</p>
 </blockquote>
 <h3 id="7-5-3-即时处理"><a href="#7-5-3-即时处理" class="headerlink" title="7.5.3. 即时处理"></a>7.5.3. 即时处理</h3><ol>
 <li>在运行中断处理程序时，如果出现程序性中断事件，在一般情况下，表明此时中断程序有异常，应对其立即响应并处理。</li>
 </ol>
-<h2 id="7-6-中断处理的例子：Linux内核处理流程"><a href="#7-6-中断处理的例子：Linux内核处理流程" class="headerlink" title="7.6. 中断处理的例子：Linux内核处理流程"></a>7.6. 中断处理的例子：Linux内核处理流程</h2><p><img src="/25.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="7-6-中断处理的例子：Linux内核处理流程"><a href="#7-6-中断处理的例子：Linux内核处理流程" class="headerlink" title="7.6. 中断处理的例子：Linux内核处理流程"></a>7.6. 中断处理的例子：Linux内核处理流程</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/25.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>中断信号源:中断向量<ol>
 <li>中断，分为所有外部设备产生的屏蔽中断请求，和硬件故障等紧迫时间引发的非屏蔽中断。</li>
@@ -874,7 +857,7 @@
 <li>不同时段针对同一个外存数据文件运行同一个外存程序文件意味着完全不同的(P, C, D, R, Psw)</li>
 </ol>
 <h3 id="8-6-1-无关进程"><a href="#8-6-1-无关进程" class="headerlink" title="8.6.1. 无关进程"></a>8.6.1. 无关进程</h3><p>不同程序在不同数据集上运行：构成两个无关进程</p>
-<h3 id="8-6-2-共享数据的交往进程"><a href="#8-6-2-共享数据的交往进程" class="headerlink" title="8.6.2. 共享数据的交往进程"></a>8.6.2. 共享数据的交往进程</h3><p><img src="/5.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="8-6-2-共享数据的交往进程"><a href="#8-6-2-共享数据的交往进程" class="headerlink" title="8.6.2. 共享数据的交往进程"></a>8.6.2. 共享数据的交往进程</h3><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/5.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>不同程序在相同数据集上运行：构成两个共享数据的交往进程</p>
 </blockquote>
@@ -882,11 +865,11 @@
 <li>相同代码在不同数据集上运行：构成两个共享代码的无关进程</li>
 <li>共享的代码称为<strong>可再入</strong>程序，如编辑器<strong>可再入程序</strong>是<strong>纯代码</strong>的，可再入程序必须是纯代码的</li>
 </ol>
-<h3 id="8-6-4-共享代码和数据的进程"><a href="#8-6-4-共享代码和数据的进程" class="headerlink" title="8.6.4. 共享代码和数据的进程"></a>8.6.4. 共享代码和数据的进程</h3><p><img src="/6.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="8-6-4-共享代码和数据的进程"><a href="#8-6-4-共享代码和数据的进程" class="headerlink" title="8.6.4. 共享代码和数据的进程"></a>8.6.4. 共享代码和数据的进程</h3><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/6.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>可以共享代码或者共享数据</p>
 </blockquote>
-<h1 id="9-进程状态和转换"><a href="#9-进程状态和转换" class="headerlink" title="9. 进程状态和转换"></a>9. 进程状态和转换</h1><h2 id="9-1-进程三态模型"><a href="#9-1-进程三态模型" class="headerlink" title="9.1. 进程三态模型"></a>9.1. 进程三态模型</h2><p><img src="/7.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="9-进程状态和转换"><a href="#9-进程状态和转换" class="headerlink" title="9. 进程状态和转换"></a>9. 进程状态和转换</h1><h2 id="9-1-进程三态模型"><a href="#9-1-进程三态模型" class="headerlink" title="9.1. 进程三态模型"></a>9.1. 进程三态模型</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/7.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>只要操作系统支持多道程序设计，就必须要设计进程转换模型来管理，必须实现<strong>三个进程状态和四个跳转关系</strong>，进程状态转换一定有<strong>内核</strong>的参与。</li>
 <li>运行被中断进程时需要找到被中断时的信息并恢复。</li>
@@ -920,7 +903,7 @@
 <li>然后围绕以上两部分开发出相应的操作和算法</li>
 <li>进程状态和模型与信号量同样相关，后续深入讨论。</li>
 </ol>
-<h2 id="9-2-进程七态模型-P74"><a href="#9-2-进程七态模型-P74" class="headerlink" title="9.2. 进程七态模型(P74)"></a>9.2. 进程七态模型(P74)</h2><p><img src="/26.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="9-2-进程七态模型-P74"><a href="#9-2-进程七态模型-P74" class="headerlink" title="9.2. 进程七态模型(P74)"></a>9.2. 进程七态模型(P74)</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/26.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="9-2-1-新添加的状态"><a href="#9-2-1-新添加的状态" class="headerlink" title="9.2.1. 新添加的状态"></a>9.2.1. 新添加的状态</h3><ol>
 <li><strong>新建态</strong>:对应于进程被创建的状态，尚未进入就绪队列，创建进程的两个步骤<ol>
 <li>为新进程分配所需资源和建立必要的管理信息</li>
@@ -952,7 +935,7 @@
 </li>
 <li>结束挂起状态的命令只能由<strong>操作系统和父进程</strong>发出。</li>
 </ol>
-<h3 id="9-3-2-进程挂起的选择与恢复"><a href="#9-3-2-进程挂起的选择与恢复" class="headerlink" title="9.3.2. 进程挂起的选择与恢复"></a>9.3.2. 进程挂起的选择与恢复</h3><p><img src="/8.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="9-3-2-进程挂起的选择与恢复"><a href="#9-3-2-进程挂起的选择与恢复" class="headerlink" title="9.3.2. 进程挂起的选择与恢复"></a>9.3.2. 进程挂起的选择与恢复</h3><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/8.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>挂起的选择：<ol>
 <li>一般选择<strong>等待态</strong>进程进入<strong>挂起等待态</strong></li>
@@ -972,7 +955,7 @@
 <li>进程可能会有等待事件，但是等待事件是独立于挂起条件的，事件结束并不能导致进程具备执行条件</li>
 <li>由于操作系统、父进程或进程自身阻止其运行</li>
 </ol>
-<h2 id="9-4-补充：SVR4-进程状态模型"><a href="#9-4-补充：SVR4-进程状态模型" class="headerlink" title="9.4. 补充：SVR4 进程状态模型"></a>9.4. 补充：SVR4 进程状态模型</h2><p><img src="/33.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="9-4-补充：SVR4-进程状态模型"><a href="#9-4-补充：SVR4-进程状态模型" class="headerlink" title="9.4. 补充：SVR4 进程状态模型"></a>9.4. 补充：SVR4 进程状态模型</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/33.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>preempted:抢占，虚线表示合为一体。</p>
 </blockquote>
@@ -989,12 +972,12 @@
 <li>进程映像是<strong>内存级</strong>的物理实体，又称为进程的内存映像</li>
 <li>进程的内存映像示意图</li>
 </ol>
-<p><img src="/14.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/14.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="10-2-进程控制块，Process-Control-Block，PCB，又称进程描述符"><a href="#10-2-进程控制块，Process-Control-Block，PCB，又称进程描述符" class="headerlink" title="10.2. 进程控制块，Process Control Block，PCB，又称进程描述符"></a>10.2. 进程控制块，Process Control Block，PCB，又称进程描述符</h2><ol>
 <li>进程控制块PCB是OS用于记录和刻画<strong>进程状态及环境信息</strong>的数据结构，是进程存在的唯一标识，是操作系统刻画进程的执行状态及环境信息的数据结构，是进程动态特征的汇集，是操作系统掌握进程的唯一资料结构和进程调度的主要依据</li>
 <li>包括标识信息、现场信息和控制信息。</li>
 </ol>
-<p><img src="/13.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/13.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="10-2-1-标识信息"><a href="#10-2-1-标识信息" class="headerlink" title="10.2.1. 标识信息"></a>10.2.1. 标识信息</h3><blockquote>
 <p>用于存放唯一标识该进程的信息</p>
 </blockquote>
@@ -1061,7 +1044,7 @@
 </ol>
 </li>
 </ol>
-<p><img src="/9.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/9.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>最后通过系统调用结束处理，进程实现的队列模型不适合使用堆栈(堆栈是先进后出的)</p>
 </blockquote>
@@ -1074,7 +1057,7 @@
 </ol>
 </li>
 </ol>
-<p><img src="/32.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/32.png" srcset="/img/loading.gif" lazyload></p>
 <h1 id="11-进程的管理"><a href="#11-进程的管理" class="headerlink" title="11. 进程的管理"></a>11. 进程的管理</h1><h2 id="11-1-概念级的OS进程管理软件"><a href="#11-1-概念级的OS进程管理软件" class="headerlink" title="11.1. 概念级的OS进程管理软件"></a>11.1. 概念级的OS进程管理软件</h2><blockquote>
 <p>关键的进程管理软件包括：</p>
 </blockquote>
@@ -1200,11 +1183,11 @@
 <li>比如计时中断，中断处理完成后直接恢复</li>
 <li>模式切换是进程仍在自己的上下文进行处理，仅仅是处理器状态发生了变化，内核仍然被中断进程的上下文中进行处理。</li>
 </ol>
-<p><img src="/80.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/80.png" srcset="/img/loading.gif" lazyload></p>
 <h1 id="12-多线程技术概述"><a href="#12-多线程技术概述" class="headerlink" title="12. 多线程技术概述"></a>12. 多线程技术概述</h1><ol>
 <li>最开始设计进程的时候并没有体现线程的概念</li>
 </ol>
-<h2 id="12-1-单线程结构"><a href="#12-1-单线程结构" class="headerlink" title="12.1. 单线程结构"></a>12.1. 单线程结构</h2><p><img src="/10.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="12-1-单线程结构"><a href="#12-1-单线程结构" class="headerlink" title="12.1. 单线程结构"></a>12.1. 单线程结构</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/10.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>传统进程是单线程结构进程</p>
 </blockquote>
@@ -1226,7 +1209,7 @@
 <li>线程的出现会减少进程并发执行所付出的时空开销，使得并发粒度更细、并发性更好</li>
 <li>两项功能绑定就是单线程进程，两项功能分离就是多线程进程。</li>
 </ol>
-<h2 id="12-2-多线程结构进程"><a href="#12-2-多线程结构进程" class="headerlink" title="12.2. 多线程结构进程"></a>12.2. 多线程结构进程</h2><p><img src="/15.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="12-2-多线程结构进程"><a href="#12-2-多线程结构进程" class="headerlink" title="12.2. 多线程结构进程"></a>12.2. 多线程结构进程</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/15.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="12-2-1-多线程环境下进程的概念"><a href="#12-2-1-多线程环境下进程的概念" class="headerlink" title="12.2.1. 多线程环境下进程的概念"></a>12.2.1. 多线程环境下进程的概念</h3><ol>
 <li>在多线程环境中，进程是操作系统中除处理器以外的资源分配和保护的<strong>独立单位</strong>。具有:<ol>
 <li>用来容纳进程映像的虚拟地址空间</li>
@@ -1298,7 +1281,7 @@
 <li>创建时：内核为其创建进程和一个基线程，线程实行过程中通过内核的创建线程原语来创建其他线程。</li>
 <li>OS直接调度KLT，KLT用于解决物理并行性问题，内核可以感知到所有的内核级线程，可以控制器其数据结构，内核调度在线程的基础上进行。</li>
 </ol>
-<h3 id="13-1-1-内核级线程示意图"><a href="#13-1-1-内核级线程示意图" class="headerlink" title="13.1.1. 内核级线程示意图"></a>13.1.1. 内核级线程示意图</h3><p><img src="/16.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="13-1-1-内核级线程示意图"><a href="#13-1-1-内核级线程示意图" class="headerlink" title="13.1.1. 内核级线程示意图"></a>13.1.1. 内核级线程示意图</h3><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/16.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="13-1-2-内核级线程的特点"><a href="#13-1-2-内核级线程的特点" class="headerlink" title="13.1.2. 内核级线程的特点"></a>13.1.2. 内核级线程的特点</h3><ol>
 <li>优点：<ol>
 <li>在多处理器上内核可以同时调度统一进程的多个线程运行。</li>
@@ -1316,7 +1299,7 @@
 <li>用户空间运行的线程库，提供多线程应用程序的开发和运行支撑环境。任何应用程序均需通过线程库进行程序设计，再与线程库连接后运行</li>
 <li>线程管理的所有工作都由<strong>应用程序</strong>完成，<strong>内核没有</strong>感知到线程的存在，内核感知到的单位是进程。</li>
 </ol>
-<h3 id="13-2-1-用户级线程示意图"><a href="#13-2-1-用户级线程示意图" class="headerlink" title="13.2.1. 用户级线程示意图"></a>13.2.1. 用户级线程示意图</h3><p><img src="/17.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="13-2-1-用户级线程示意图"><a href="#13-2-1-用户级线程示意图" class="headerlink" title="13.2.1. 用户级线程示意图"></a>13.2.1. 用户级线程示意图</h3><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/17.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="13-2-2-用户级线程的特点"><a href="#13-2-2-用户级线程的特点" class="headerlink" title="13.2.2. 用户级线程的特点"></a>13.2.2. 用户级线程的特点</h3><ol>
 <li>优点：<ol>
 <li>节省开销和内核资源:所有线程管理数据结构均在进程的用户空间中，线程切换不需要内核模式，能<strong>节省模式切换开销和内核的宝贵资源</strong>。</li>
@@ -1337,7 +1320,7 @@
 <li>当线程陷入系统调用时，执行Jacketing程序。</li>
 <li>由Jacketing程序来检查资源使用情况，以决定是否执行<strong>进程切换</strong>或<strong>传递控制权给另一个线程</strong></li>
 </ol>
-<h2 id="13-4-用户级线程-vs-内核级线程"><a href="#13-4-用户级线程-vs-内核级线程" class="headerlink" title="13.4. 用户级线程 vs. 内核级线程"></a>13.4. 用户级线程 vs. 内核级线程</h2><p><img src="/18.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="13-4-用户级线程-vs-内核级线程"><a href="#13-4-用户级线程-vs-内核级线程" class="headerlink" title="13.4. 用户级线程 vs. 内核级线程"></a>13.4. 用户级线程 vs. 内核级线程</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/18.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>受限条件下的并行:受限条件是同步关系(等待)</li>
 <li>ULT适用于解决逻辑并行性问题</li>
@@ -1349,7 +1332,7 @@
 <li>在混合式线程中，内核必须支持内核级多线程的建立、调度和管理，同时也允许应用程序建立、调度和管理用户级线程。</li>
 <li>用户级线程的切换仅在用户空间中且仅需要少量机器指令，而内核级线程需要用户态到内核态到用户态的完整上下文切换，修改内存映像，使得高速缓存失效，导致数量级的延迟。</li>
 </ol>
-<p><img src="/19.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/19.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="13-5-1-多线程实现混合式策略的特点"><a href="#13-5-1-多线程实现混合式策略的特点" class="headerlink" title="13.5.1. 多线程实现混合式策略的特点"></a>13.5.1. 多线程实现混合式策略的特点</h3><ol>
 <li>合并了用户级线程&#x2F;内核级线程设施</li>
 <li>线程创建完全在用户空间中完成，线程的调度和同步也在应用程序中进行</li>
@@ -1363,20 +1346,20 @@
 <li>活跃态的ULT代表绑定KLT的三态</li>
 <li>活跃态的ULT运行时可激活用户调度，非阻塞系统调用可使用Jacketing启动用户调度，调整活跃态ULT</li>
 </ol>
-<p><img src="/20.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/20.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>为什么是活跃态绑定KLT的三态？</li>
 <li>因为如果绑定的KLT不再运行，则也不再运行。活跃态代表了KLT，可能是运行态、可运行态、阻塞态</li>
 </ol>
-<h3 id="13-5-3-多线程实现的各种策略总结"><a href="#13-5-3-多线程实现的各种策略总结" class="headerlink" title="13.5.3. 多线程实现的各种策略总结"></a>13.5.3. 多线程实现的各种策略总结</h3><p><img src="/21.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="13-5-3-多线程实现的各种策略总结"><a href="#13-5-3-多线程实现的各种策略总结" class="headerlink" title="13.5.3. 多线程实现的各种策略总结"></a>13.5.3. 多线程实现的各种策略总结</h3><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/21.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>混合式多线程合并了内核级多线程和用户级多线程的优势，甚至可以指派到CPU，或由操作系统绑定。</p>
 </blockquote>
 <h3 id="13-5-4-Solris-多线程技术"><a href="#13-5-4-Solris-多线程技术" class="headerlink" title="13.5.4. Solris 多线程技术"></a>13.5.4. Solris 多线程技术</h3><table>
 <thead>
 <tr>
-<th><img src="/28.png" srcset="/img/loading.gif" lazyload></th>
-<th><img src="/34.png" srcset="/img/loading.gif" lazyload></th>
+<th><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/28.png" srcset="/img/loading.gif" lazyload></th>
+<th><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/34.png" srcset="/img/loading.gif" lazyload></th>
 </tr>
 </thead>
 </table>
@@ -1398,11 +1381,11 @@
 <li>中级调度，又称平衡调度、中程调度，根据内存资源情况决定内存中所能容纳的进程数目，并完成外存和内存中的进程对换工作。</li>
 <li>低级调度：又称短程调度、进程调度&#x2F;线程调度，根据某种原则决定就绪队列中哪个进程&#x2F;线程获得处理器，并将处理器让出给它使用。</li>
 </ol>
-<h3 id="14-1-1-处理器调度层次与进程状态转换"><a href="#14-1-1-处理器调度层次与进程状态转换" class="headerlink" title="14.1.1. 处理器调度层次与进程状态转换"></a>14.1.1. 处理器调度层次与进程状态转换</h3><p><img src="/22.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="14-1-1-处理器调度层次与进程状态转换"><a href="#14-1-1-处理器调度层次与进程状态转换" class="headerlink" title="14.1.1. 处理器调度层次与进程状态转换"></a>14.1.1. 处理器调度层次与进程状态转换</h3><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/22.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>这个说明录入各级调度和七态模型的情况，三个框分别表明不同调度层次，如上图所示。资源紧张时挂起，资源空闲时解挂</p>
 </blockquote>
-<h3 id="14-1-2-处理器调度层次与关键状态转换"><a href="#14-1-2-处理器调度层次与关键状态转换" class="headerlink" title="14.1.2. 处理器调度层次与关键状态转换"></a>14.1.2. 处理器调度层次与关键状态转换</h3><p><img src="/23.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="14-1-2-处理器调度层次与关键状态转换"><a href="#14-1-2-处理器调度层次与关键状态转换" class="headerlink" title="14.1.2. 处理器调度层次与关键状态转换"></a>14.1.2. 处理器调度层次与关键状态转换</h3><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/23.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="14-1-3-高级调度"><a href="#14-1-3-高级调度" class="headerlink" title="14.1.3. 高级调度"></a>14.1.3. 高级调度</h3><ol>
 <li>在分时操作系统中，高级调度决定：<ol>
 <li>是否接受一个终端用户的连接</li>
@@ -1427,7 +1410,7 @@
 <li>一般操作系统都配置了高级调度和低级调度，而功能完善的操作系统为了提高内存利用率和作业吞吐率引进了中级调度。</li>
 <li>因此，从处理器调度的层次来讲，可以划分为三级调度模型和两级调度模型。</li>
 </ol>
-<h2 id="14-2-CPU从进程到进程的切换"><a href="#14-2-CPU从进程到进程的切换" class="headerlink" title="14.2. CPU从进程到进程的切换"></a>14.2. CPU从进程到进程的切换</h2><p><img src="/35.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="14-2-CPU从进程到进程的切换"><a href="#14-2-CPU从进程到进程的切换" class="headerlink" title="14.2. CPU从进程到进程的切换"></a>14.2. CPU从进程到进程的切换</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/35.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li>内核态进程占用时间不应该过多，应当尽量避免频繁的模式切换<ol>
 <li>正向切换(从用户态转换到内核态):Trap、系统调用、中断</li>
@@ -1521,7 +1504,7 @@
 <li>性能会非常差，不被现在的操作系统使用。</li>
 <li>先来先服务算法示例：</li>
 </ol>
-<p><img src="/38.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/38.png" srcset="/img/loading.gif" lazyload></p>
 <ol start="6">
 <li>平均作业周转时间$T + \frac{3 + 7 + 9 + 12 + 12}{5} &#x3D; 8.6$</li>
 <li>平均带权作业周转时间$T + \frac{\frac{3}{3} + \frac{7}{6} + \frac{9}{4} + \frac{12}{5} + \frac{12}{2}}{5} \approx 2.563$</li>
@@ -1529,7 +1512,7 @@
 <h2 id="16-2-SPN-最短进程优先"><a href="#16-2-SPN-最短进程优先" class="headerlink" title="16.2. SPN (最短进程优先)"></a>16.2. SPN (最短进程优先)</h2><ol>
 <li>SPN是一种<strong>非抢占式</strong>调度，会选择处理时间最短的进程，短进程将会越过长进程，优先获得调度，又称为SJF。</li>
 </ol>
-<p><img src="/47.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/47.png" srcset="/img/loading.gif" lazyload></p>
 <ol start="2">
 <li>平均作业周转时间$T &#x3D; \frac{3 + 7 + 11 + 14 + 3}{5} &#x3D; 7.6$</li>
 <li>平均带权作业周转时间$W &#x3D; \frac{\frac{3}{3} + \frac{7}{6} + \frac{11}{4} + \frac{14}{5} + \frac{3}{2}}{5} \approx 1.843$</li>
@@ -1544,7 +1527,7 @@
 <li>SRT是一种<strong>抢占式</strong>调度，调度器总是选择预期剩余时间更短的进程</li>
 <li>当一个新进程加入就绪队列，他可能比当前运行的进程具有更短的剩余时间，只要新进程进入就绪队列，调度器就可能抢占当前正在运行的进程</li>
 </ol>
-<p><img src="/48.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/48.png" srcset="/img/loading.gif" lazyload></p>
 <ol start="3">
 <li>平均等待时间$&#x3D;\frac{(3 - 3 - 0) + (15 - 6 - 2) + (8 - 4 - 4) + (20 - 5 - 6) + (10 - 2 - 8)}{5} &#x3D; 3.2$</li>
 <li>平均周转时间$&#x3D;\frac{(3 - 0) + (15 - 2) + (8 - 4) + (20 - 6) + (10 - 8)}{5} &#x3D; 7.2$</li>
@@ -1555,7 +1538,7 @@
 <li>每当需要调度时，计算出所有的响应比，选择最高的。</li>
 </ol>
 <p>$$<br>\begin{aligned}<br>   &amp;响应比 &#x3D; \frac{等待时间 + 期待服务时间}{期待服务时间}\<br>   &amp;\qquad\qquad &#x3D; 1 + \frac{等待时间}{期待服务时间} \<br>\end{aligned}<br>$$</p>
-<p><img src="/49.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/49.png" srcset="/img/loading.gif" lazyload></p>
 <table>
 <thead>
 <tr>
@@ -1623,7 +1606,7 @@
 </ol>
 </li>
 </ol>
-<p><img src="/36.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/36.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="16-6-RR-时间片轮转调度算法"><a href="#16-6-RR-时间片轮转调度算法" class="headerlink" title="16.6. RR(时间片轮转调度算法)"></a>16.6. RR(时间片轮转调度算法)</h2><p>以时间片轮转为基本策略的调度算法不需要预知就绪进程所需cpu时长</p>
 <ol>
 <li>本质也是<strong>先来先服务</strong>，但是要按照时间片来进行调度。</li>
@@ -1655,19 +1638,19 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><img src="/40.png" srcset="/img/loading.gif" lazyload></td>
-<td><img src="/41.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/40.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/41.png" srcset="/img/loading.gif" lazyload></td>
 </tr>
 <tr>
-<td><img src="/42.png" srcset="/img/loading.gif" lazyload></td>
-<td><img src="/43.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/42.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/43.png" srcset="/img/loading.gif" lazyload></td>
 </tr>
 <tr>
-<td><img src="/44.png" srcset="/img/loading.gif" lazyload></td>
-<td><img src="/45.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/44.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/45.png" srcset="/img/loading.gif" lazyload></td>
 </tr>
 <tr>
-<td><img src="/46.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/46.png" srcset="/img/loading.gif" lazyload></td>
 <td></td>
 </tr>
 </tbody></table>
@@ -1696,64 +1679,64 @@
 <li>除了极少数的硬实时操作系统使用抢占式调度算法，绝大多数操作系统有效地组合时间片调度算法和优先数调度算法，采用分级调度算法的策略加以实现</li>
 <li>如果没有竞争不掉下去，时刻1(根据考试具体情况决定)</li>
 </ol>
-<p><img src="/50.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/50.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="16-7-1-q-x3D-1-时的多级反馈调度的示例"><a href="#16-7-1-q-x3D-1-时的多级反馈调度的示例" class="headerlink" title="16.7.1. q &#x3D; 1 时的多级反馈调度的示例"></a>16.7.1. q &#x3D; 1 时的多级反馈调度的示例</h3><table>
 <thead>
 <tr>
-<th><img src="/51.png" srcset="/img/loading.gif" lazyload></th>
-<th><img src="/52.png" srcset="/img/loading.gif" lazyload></th>
+<th><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/51.png" srcset="/img/loading.gif" lazyload></th>
+<th><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/52.png" srcset="/img/loading.gif" lazyload></th>
 </tr>
 </thead>
 <tbody><tr>
-<td><img src="/53.png" srcset="/img/loading.gif" lazyload></td>
-<td><img src="/54.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/53.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/54.png" srcset="/img/loading.gif" lazyload></td>
 </tr>
 <tr>
-<td><img src="/55.png" srcset="/img/loading.gif" lazyload></td>
-<td><img src="/56.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/55.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/56.png" srcset="/img/loading.gif" lazyload></td>
 </tr>
 <tr>
-<td><img src="/57.png" srcset="/img/loading.gif" lazyload></td>
-<td><img src="/58.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/57.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/58.png" srcset="/img/loading.gif" lazyload></td>
 </tr>
 <tr>
-<td><img src="/59.png" srcset="/img/loading.gif" lazyload></td>
-<td><img src="/60.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/59.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/60.png" srcset="/img/loading.gif" lazyload></td>
 </tr>
 <tr>
-<td><img src="/61.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/61.png" srcset="/img/loading.gif" lazyload></td>
 <td></td>
 </tr>
 </tbody></table>
 <h3 id="16-7-2-q-x3D-2-i-时的多级反馈调度的示例"><a href="#16-7-2-q-x3D-2-i-时的多级反馈调度的示例" class="headerlink" title="16.7.2. q &#x3D; $2^i$时的多级反馈调度的示例"></a>16.7.2. q &#x3D; $2^i$时的多级反馈调度的示例</h3><table>
 <thead>
 <tr>
-<th><img src="/62.png" srcset="/img/loading.gif" lazyload></th>
-<th><img src="/63.png" srcset="/img/loading.gif" lazyload></th>
+<th><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/62.png" srcset="/img/loading.gif" lazyload></th>
+<th><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/63.png" srcset="/img/loading.gif" lazyload></th>
 </tr>
 </thead>
 <tbody><tr>
-<td><img src="/64.png" srcset="/img/loading.gif" lazyload></td>
-<td><img src="/65.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/64.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/65.png" srcset="/img/loading.gif" lazyload></td>
 </tr>
 <tr>
-<td><img src="/66.png" srcset="/img/loading.gif" lazyload></td>
-<td><img src="/67.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/66.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/67.png" srcset="/img/loading.gif" lazyload></td>
 </tr>
 <tr>
-<td><img src="/68.png" srcset="/img/loading.gif" lazyload></td>
-<td><img src="/69.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/68.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/69.png" srcset="/img/loading.gif" lazyload></td>
 </tr>
 <tr>
-<td><img src="/70.png" srcset="/img/loading.gif" lazyload></td>
-<td><img src="/71.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/70.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/71.png" srcset="/img/loading.gif" lazyload></td>
 </tr>
 <tr>
-<td><img src="/72.png" srcset="/img/loading.gif" lazyload></td>
+<td><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/72.png" srcset="/img/loading.gif" lazyload></td>
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="16-7-3-多级反馈调度的示意图"><a href="#16-7-3-多级反馈调度的示意图" class="headerlink" title="16.7.3. 多级反馈调度的示意图"></a>16.7.3. 多级反馈调度的示意图</h3><p><img src="/24.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="16-7-3-多级反馈调度的示意图"><a href="#16-7-3-多级反馈调度的示意图" class="headerlink" title="16.7.3. 多级反馈调度的示意图"></a>16.7.3. 多级反馈调度的示意图</h3><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/24.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>如果没有进程竞争，那么会不会导致进程掉下去，根据具体情况分析，可能掉下去也可能没有掉下去。</li>
 <li>此时RQ0是A，RQ2是C，当前A在做，那么A掉下来后是运行A还是C，可以考虑运行A进程：因为掉到了RQ1，也可以考虑运行C进程，具体情况要看操作系统时间中的细节</li>
@@ -1771,7 +1754,7 @@
 <li>给每个进程赋予基本优先级的目的是把所有进程划分成固定的优先级区</li>
 <li>可控调节因子</li>
 </ol>
-<h2 id="16-10-Unix-SVR4调度算法-例"><a href="#16-10-Unix-SVR4调度算法-例" class="headerlink" title="16.10. Unix SVR4调度算法(例)"></a>16.10. Unix SVR4调度算法(例)</h2><p><img src="/74.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="16-10-Unix-SVR4调度算法-例"><a href="#16-10-Unix-SVR4调度算法-例" class="headerlink" title="16.10. Unix SVR4调度算法(例)"></a>16.10. Unix SVR4调度算法(例)</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/74.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li><p>100-159是实时部分任务</p>
 </li>
@@ -1786,7 +1769,7 @@
 </ol>
 </li>
 </ol>
-<p><img src="/75.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/75.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="16-11-Bands"><a href="#16-11-Bands" class="headerlink" title="16.11. Bands"></a>16.11. Bands</h2><blockquote>
 <p>优先级递减：对换、块I&#x2F;O设备控制、文件操作、字符I&#x2F;O设备控制、用户进程</p>
 </blockquote>
@@ -1818,7 +1801,7 @@
 </li>
 <li>作业默认所有的资源调度都是静态调度(静态分配)完成的，输出井来完成。</li>
 </ol>
-<h2 id="17-2-批处理作业的状态作业调度与进程调度"><a href="#17-2-批处理作业的状态作业调度与进程调度" class="headerlink" title="17.2. 批处理作业的状态作业调度与进程调度"></a>17.2. 批处理作业的状态作业调度与进程调度</h2><p><img src="/78.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="17-2-批处理作业的状态作业调度与进程调度"><a href="#17-2-批处理作业的状态作业调度与进程调度" class="headerlink" title="17.2. 批处理作业的状态作业调度与进程调度"></a>17.2. 批处理作业的状态作业调度与进程调度</h2><p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/78.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>作业调度：按一定的策略选取若干个作业让它们进入内存、构成进程去竞争处理器以获得运行机会</li>
 <li>用户立场：自己作业的周转时间尽可能的小</li>
@@ -1828,8 +1811,8 @@
 <h1 id="18-补充"><a href="#18-补充" class="headerlink" title="18. 补充"></a>18. 补充</h1><h2 id="18-1-习题-进程管理的fork系统调用"><a href="#18-1-习题-进程管理的fork系统调用" class="headerlink" title="18.1. 习题(进程管理的fork系统调用)"></a>18.1. 习题(进程管理的fork系统调用)</h2><table>
 <thead>
 <tr>
-<th><img src="/76.png" srcset="/img/loading.gif" lazyload></th>
-<th><img src="/77.png" srcset="/img/loading.gif" lazyload></th>
+<th><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/76.png" srcset="/img/loading.gif" lazyload></th>
+<th><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/77.png" srcset="/img/loading.gif" lazyload></th>
 </tr>
 </thead>
 </table>
@@ -1839,12 +1822,10 @@
 <li>第二次fork A -&gt; C, B -&gt; D</li>
 <li>到三次fork A -&gt; E, B -&gt; F, C -&gt; G, D -&gt; H</li>
 </ol>
-<p><img src="/78.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/03/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lec2/78.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="18-2-阿里云平台"><a href="#18-2-阿里云平台" class="headerlink" title="18.2. 阿里云平台"></a>18.2. 阿里云平台</h2><ol>
-<li><p>章文嵩:Linux集群，LVS，尽量节能</p>
-</li>
-<li><p>使用了灵动处理器</p>
-</li>
+<li>章文嵩:Linux集群，LVS，尽量节能</li>
+<li>使用了灵动处理器</li>
 </ol>
 <p>本文主要内容来自 <a target="_blank" rel="noopener" href="https://spricoder.github.io/">SpriCoder的博客</a></p>
 
