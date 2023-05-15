@@ -1,0 +1,744 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Saisai Zhu">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode-11-0512">
+<meta property="og:url" content="https://sufailure.github.io/2023/05/12/2023Spring/everyday/day11/leetcode-11-0512/index.html">
+<meta property="og:site_name" content="sufailure">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-12T02:06:55.000Z">
+<meta property="article:modified_time" content="2023-05-12T03:33:41.167Z">
+<meta property="article:author" content="Saisai Zhu">
+<meta property="article:tag" content="练习">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>leetcode-11-0512 - sufailure</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"sufailure.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"jCjgzQRn50iDMD3MNA3AliGs-gzGzoHsz","app_key":"UqtdOKia5Aac1q2fqz5lux0u","server_url":"https://jcjgzqrn.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>sufailure&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="leetcode-11-0512"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-05-12 10:06" pubdate>
+          2023年5月12日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          11k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          89 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">leetcode-11-0512</h1>
+            
+            
+              
+              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="39d62257760664da2cb8b69e3b8c4c40c82b004285246b745598d31e9ec77628">49aee76c8cbcead8dac4812ce265dce959ae38424dc3359bb0ae45b3be8d262d36a4487f7067e9149b03f075e556e9539572ee8c17749ab82b28e361e609d5e016ea40e970201b67b51fa76a025886b25ee5f4f2b06f41130d154c73871205983a26ca32ec0c49da59766b3be062703287a50443307f67e34ebb084f9166b6b9ca7691e10458eaaa6fc6b056ec7eaffb0e068a0a3f89f20189cfda7feb823588bdae79e45c7ed356830154e24e0c2f7b2dfce5c1e54e62049e0136f2cd69deb014386571bc6ba67b0254a1dd2d6ce5a69e757b1a7a9194d7ff2b76376d4ce87a76cb23e1b544bc0a03af3c2b23968d1421c88d962b9230e8f04d4ab1aa8b6242b41afcdf5927583e8bf21fc1614ae38299bd81bc53af6dda7cb4b200d27d101d15ec567775f22887306a85fb184577b7facae39eb362652b528991758aeafeb8f2430d5b09d43414f470792ebb4911ccefa7f123c552681a42c58ebb30da412cf0847a00da77b8165b4244379936b9dba61f462d708072c5e7f5b8620dcc2e620b8dfff35b6f38aca0aa9da547b70a2c50319be23e24a607eaef356665d5855c28920d7a0357622ac2a81cb39c9bf29b15bde8b22de343621981fd38b1bb2b3fd455f98217b4c7d05e6405aae4909dc13a7c7c7609b6df960f3c3393a949d57608f965c42de5dc762b8d0abcb40df5cd9a9d9794bab4444c118554535dbbbf95eef0c0eb72cb0d2eb0e8058edd7d2b85b9052e6ba596ff7705a5ac8957f25f931346c026ba672947a89d9315dcb84137fb730f47a2f81941a6306b9a15c5cb1e4a309a469cfd894a4858fd35135f1461fca410e509889f6483757db7290b2ee273430c50624edbb205316816d58cb33070422f2fe6bbe5e2bebff410b46362e87721f2721d300a69e6f4fb92f5e7bfeb0ace24e1ae8b263930ce04b045f41fafbfd14cf357e4af0849fd0cda0975442909f537d8c7ceb95c3f39327babd2508bdbc6d92e6df6023b38d56dbaa294faa701e359698a20cfd6e61f41a248ab4fbf3bfe39fe49929a26e5c28af0eaa3cb7efcf87eb00b9f40b69f3455eaa1435812810d653e00e88ee58379bca7819b10cd9f1078a596fca84c64af3a67d5f88eca6f3cb25172820a43fc9c81cbf0293dd7ce067a0a6a4ffd9107d88aada9f4eebabc808149df8b999d7fc21656a3d85fa4bbbe851dad00d334deb40e2c501304475c93fbd6b1088844619ff80bf390431c98c0790c021e41fdcc8d8490732bd2e9c597d268ab683d54ffefb57ef8c74059549cd4c38289a8e1d7dd66f58476d4845d6d2d061d2d3759bb047bc6705a64b9eb7736195d323bfcb28e28f87ce2360fa26e01bbf8a577c988fe5466c94c0e68aa315784abc99ff2a85711d9d05672a85663779f9c6b4f9f3eae41c756b9bcb26e530e9b72532b4c6a3c0578001ec751e1a1b0d964c977b1b8732ed3466c86825dd774d424720406976d9ecfc811b3d0b8d9a0214791087733ead43134e611a318fccdaad0a693a28bb48416287b7715562c7643e52ca62a96cde86d9d05ac9fd759d470e45458b1ad703ea67505216ee54ce80567e7da84e5f21fd89a9cecd8bba51ff90cf75d1c12fbc6142d6add982160330720f911796104a6929086770f85e32d449f1d9d1d38a838e16a393f0802f636f78df61bf7c8e60c2abb9043fefa68b8ee7267a0d78ec74d26e0f087f35d973881f05f32c856c02cfb8b58b5739d3e29e2602526c25d6dbbcd95c2acb595bbdd3e5146ee6d25bcb12edc596e96a217cf8c73682cbac08baeaf1568f6fc3ca7e544d298d1d11988ed2bba5a9ec8b211b7d65c702aa8e0a0ba426a36fcbd2aaf931e470c671c32bf9a74bdb52b4e2756dd1eb2f3799f8c66639699aad5f73d1dcc5403b71eadd7e5efc5c52cc2203bcc87f592473a27702d62b5fb957942923f7f6b96f6d47647882335a33422158a22a1927a48d8625524d2dbb0f1ba5f5f6015b13cc51ffb8fe0781fe19e60d94e740642dc232bf19d3ec18e56b67305e0f3c9eb9ef69a460f7d0166ad26e554d2f06518d0bf2ae3996c12e0c32414b02f5b511afee13632031c719a178768135eb088e4b43b8b2789d2ac4e6e34ebef30dcc65fc27ab1ac1aaf3b02969782706d95d3247cab9d901c3d07e6e9790e987e3b232f981d84568978ce719dcb55a719b9014917dad0b05481b64a044c2cfe37644cf20a4daa8817aeeded496ab113bdc729be814a1d453e5d15161bd534143bf81c28e28e9f18630c77f9caadd7b50ec0eb12ecd91f98762d4d0f8852fdf396d2bc098fa7508b1fad1f04c9728ad05b23acca4465cdb3aa5d10c1f88fa6d7d11fccd25e8e7345515d18c82423bc9262ddf38aefb1769bd3638f168d456b8f6110ca397871e49a8cea3b739e2bfab925f28caa118f5633163d084b7f351b0ac62391bf7e20e037abd0e4d8c4c3e06a87667dcc5ceb1e2e4e45d4423ecb3f12833427b208cb3a4067b17fc007789f6be115777c58357fa9029bf7229b0ef280dc4ebf1fa254910231c2641ae2238168aee9d3e0d57e9d75e992dd5b491d6cd422cfbe0239ab45346d752a012d18e51eea638078493849900b63523a4a5ac2063e1b76a53c52f7f9ba993907c5b939c27d8bb28e1921e1b7a70a0a9a1206b03545fe6b6fae93ad65a4fb770c0f966d249efd8956a1ebd1a62978a08afca3d7aff4e9403ad94f076e36a6cc3b8bfb3f693f1e11d9a300247f59bedde7a044722322119f6d5bc60c14a23c3b75a725daad7d84b507a6da79dc9d134036717e63563620d8bf3dfab3677e6a7365a77e499ddc9e62b8bfc354aa1093b8466daaa28e0259406a1d59c3a5f8941790cb5ab3d67111637e4d685036a65759724b964f29bf253422dbb1ad223062e46be8c64c0d625ba043d152f0857197c645e1231556436f021bed7b71effffb261e49a2e684a55ec43e1e251b1745fa9d410f74ca470c1f0df96ae493367656db0439e609443037755bc07ae0dc07653dd9d0f253c114aea4799afecc421252d913b85a84e3c980c262478d655c601002403d93a1870a1f95408cbffff3c67155887e4c6184fea562cc699242ca23fc6118854fdd850c6f7677726f36ac3ec412dd397ae2f980a0aec3ec89d4448679cbc49359c7a95ef3e70da35d9c9ee73ae8295756846b9bf1f9779656c58319e9741bb63134dbb8920e606f09ab101649501a6a0ccc85de23f61b4e04bf310df4e3c1566235cc225ac452be7796ec603a022398fe93e1d36d0195a92654028fc5d7bdf01df383c4ff362edfc5d2eb270050603647f3e582c78bb68933336ff8e1d39732bb48231fa5cc06abbe58eeea435bdd2a330fbe9113c63388c71d00af1c3e8cd1e0cf77c798a6c84bceabcb28acd9dbba20758f91d108469ebe852b636d0c72bba91cd9331c6383e6bb4ddfef2a115ad2768d55053e1a4ef0629573a5cd3094422eaff5a6de6ce0604bba920d947f44fbe98a4885dfdf74201ff8dd29a18fd12dc03d61d49ae71a5f995e2c32f5428011c0eca7059fdb7ee1219df1c13d671389b09b67162dcc058da0a849db7363032e70e7d6e01b4fad788012bbd65628513f7f8c3c3affadd03574d4af5068cd0a4bcb745e11cc7ff5744817727b15e4669aa80c22ee973340a6084dbeaecad9137329c8833e4e74dec59cc7cb81aad56b1b8468188b84966f8c78c3bd2ac81c52bbc6c6fe22e25ae653dbfef716165aecb13bede907f7a2f382283a8d4d29b5096fe48f6f892ddaf97a4c491d0b62b24b7fb38b1519baca9617d2a6623563bfba820408e1b14e43ca2cd24ea869e0a39018f8ea3dcc83bae58a77db3910e27b251d556e45702316c699c3e5fc0789b60cede3644eb39d22848d39d709f2fcc32b6de0e91384dd0357494643730051c8a3086508cccb4a7e72bcac28adf18cdec98460ce7c20c0df85477e88454bff3d6819493c4926981d6fdb45f6a0575e655a82ba22a126e5508efdc82a8420b7923eae68c9454bbdba627db361b9d190b4d08c719fef7d8939a976c9ee4adabf67b4bee279a7645123aaa37352368954780451a4a73c032b50bd3d9266969955ff900cf8fb7bfe150e31662c3bea5d2c79651396a34e6122e510ecbb5723a5fbe6ca2e9fb48e25e9eda7defef1fbdf95a2299761024f58cce36b2580aff61d8219c9945d9938a2ecd47336ea747da1b22bd6008446eac33640f0144e41fa3a31892aa22de23bc59cf4a1a3157395bf5a29e077ca92edc7b8a9c9787f278403ccd201c2fc98c118075d7e5569a0f35b0447f64dbc2ca75edcefb9a575c98bca285d0d2165aa13660e3d9b11cea912d9a1f6024b27b9fb252ea10e6b1cf6257f676b940fa230e51955d050cf889d504325b68168232cdf3265227a5ee756ca7d6a567dad7ba6488efd955e1336901f24bd0fe20dccf1b8995a64a5f442d9eae9b83539e9d4237781ea3cac00ee3cf1c81d51b066cf5407d382352b15e66a70e38ff4cf125d0e5a260cef302df092663a3cce88e0f2d5bb37f632f4022efb478d673cfdef0e50254021f3f3081e242d1bd94c2694afa6f9cbdb418e05bb2933d272fb96113e0405e3072f979c26b104f65f17691278ef71b035814775f0336b6613b59ffa0775f65cef3c1ec7e340622c6f747ba3d1fefbcb6d156d8f82434109324add6769a1a610abd9028eafb6309eb0e2669920ed500e634b82bec9e03d8e7f90ba0ceb5608ecbbe53631b2ab8de462928e4e69c342bfa711ddec62ecb24d60f526c4c993426777e729209237f159730af96c71561dedb3406290b4117eeeeaaeed47a2c2cf30c4da5d261726b2fa2bc99a60b8ef637b5cb1e198e3c368b718b1cc01b73129873f74f5472073ac0010ac4a156dd06a12fac16966081df66da6c2d4102a6de6c6c53f98f16f7d3af9e9d37abb556e6b52ebadcc945937717c7fb4883892801be8438708f501f74f4688d32b494879580d9675cf5e8aa7dbd540158427fd4939df0b53a21a5db7bd14bde643dd6d48e2bbeacfc878cea2892c5f295d6719e95452465c501f48403aea9a9b60e2e294b76bbe41302f93f59155c8a281b2b9707b75883ccc5aca7615b857156f832523437d07082b0a2add1cfb737c85f276817c04ea0c063c7c45729b6eaa684721e1879d7fd9803818a5012a15ec6f13a02ca6dbcc9eed1a961dbc137fa1d19aa94bbbf1850901952030b54672d7ba900f569dfff4a681877721589e9cd1890df64a036d0576577a2dd6df87acd0735f67aec198002b44411cade3793f5c4a7d8603d54a295e6d48ef9da5ec867ed124f0f0fde05c240f9daf6f3904a4f82270307a14e618b4d327e1f42987789f46b24e8e94cdfe8e9f0e7bbe355e9c150279a01002682772b9a4ebc745ff87a36e1789dc844a194c38365a6a44e2774abb29c546714de1535e93667d3881d46578a117af33b1877b1c3579b7f352bccb85d0a88ab481d57e4620b90e549dfd4c0893437e8219b240159f15fdf96f20744da68c1e364f6d95ef3a73c4ff33e313dbec351bbe490db486ccf43396a6b23b48c25d2d4f204326b2f5be6d06501a9d164bfdad23894d31d4dbb29be3c19f107e7889c60574297cb07b115d9105be52e523b5f9bb77e7a32a487a50d098a692ee2728a4075f8a29fafcb22a13a2e2e2adf61a6e1afaaf54550017835f07d346aa1a2573706951df5663cba001751c0b69a919ea068a5037e68aa6b3e3b9418d52d3fc2b721b9a5008635ec638cecefa2ae55cd6cfa495814a73e316aade81412702bf370cd37af5b832b3ef71d9e88466e7a75a1c1def31d0fde462afe9ee83840b2b6000b10b269ff0507726d809335eb8af86b91074fc015fa6480669528ac85e661bc5f88548948cacb24086d7895c24a132dc89b88125fdfb97428baedfe119d220c7a6d6a82b877e6c993d950b8ee10daadd057305ee6ec7ec3fecfb94d2775d6e7599b83fd0d1b981143587db0d068e0b902abeca34efdb011d1e8031ac72da78bffd274b439bfe0d996f689b8fe8983a1911a230c7e4b70a7ee621863962774040f474da2cde73b6e269112eb6f38149b5c04d21a466ecc5a3ecf210773126cc13ac241eaa29b1f1558e3805ac5f026385a2b49628bbd2ca4e13a298ec1b67508e315514d5f0deb9bc2ab3f3b4146afdb16f8046da336be78ed65c2a0e7c7d668e24afe662816c3f0fff2dcf245280fb4fbd2239f76795021d367e2140174484695fed820acc944cc15f5b7fe80c4c2fe50794adc6203cdf3442bd8438d16dcc31bdaad9ba924e7e6b81b51706bf02c531c4fc2b89dbf1d884bd634b9de48e0b7955d1df27ac58eca3ee4e990a78d6eebb5568ad048fd54d3e0f759246a498264a63dd0516a82f6b5c9971f19ff519e4286f21d3d5b653f0778092fabfb4165a990b635b047c652a456b742ef7595283c7b725869f56694253e51e1e7426b6125935d74c72737e038ff62ca9d0c11451afbc56634f25b7afaf42f2bbee05029bc67a8ba2b4e86eab6ff7c272ad92d9f0099ccded160bdcd3064413f9d40c4406eade43a91a1314b8578afa51ae6e8e272f398487e4aa3e7c6f401ae5269ecde9ae458ffac911db810c6eff451b56fe746eb5f985878c257509fb959df5161e7bdb046c165f4ac4740f0c5b205b594452abf4fdf4da8bbdcedcb1b4a16c2251f761635db08ff160b5a221b3f705e8ce4ddd944ca01217fc5618d109dc38808a31c3faa7518c516b78c461812843768916568c98e3b69c5ed136ad144ce18f49eb93b7d1576eb1ef2b24d70e9767b70d9a20c7701a3f5e9cbd8d1df1f2d33d0fe1813a1a12fe57dc7653d34a68e1e8d4b1eb0515063384993aa758ce7725e1a3c53fb8dd940d38bab126fbe68c8152ce5ff2aa3878b4adb218aa0f283fe39b0d5987001042dec54ed928699054162b97eed39b02e00c67f0b9b5bb622e7e758f1eecc27db4e6329fe1ad0c71cc9e038aea02bb6c4252a64c8b3c608a2cf2c1cae822b8973c848f14436be311cae2227204750fe03e2078740d70dc33cbc54bfe21444d17163f11b938a7a9a9fde9fd1152c261308984a0943d2faceccddb23a1ec810cb3ae33cedceb76283c82b22c2a8c040c91abf5ea3ba2c074885d339f81377340ef3a8a9a0bc0e743e495acab49d602709611526d707201a6e101404553c57d5ea3d3bd5243034a4b7367859a31c23e6fa7de8e0a6cee44b13d8c8545b777df5f28a68a4b098b356f26f87f3314fec8cdc2653a20f54673d85ea5f7dfccc985d365819296c2598237f77c9315f8be71a786ea2e0d90160955812593eba4f6554992c60874b6ec15756a3fe4b411725701c4a4308db164abf8b1c4eac8a2a29b8e09756a2a2f572f33b44256a749788005be0399931fec5d66c5f798e6e457475062bafccbc5bc6d186590c47a0307d0</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Welcome to my blog, enter password to read.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+              
+
+              
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BB%83%E4%B9%A0/" class="category-chain-item">练习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%BB%83%E4%B9%A0/">#练习</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>leetcode-11-0512</div>
+      <div>https://sufailure.github.io/2023/05/12/2023Spring/everyday/day11/leetcode-11-0512/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Saisai Zhu</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年5月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/05/12/2023Spring/%E8%BD%AF%E5%B7%A5%E2%85%A1/%E8%BD%AF%E5%B7%A5%E2%85%A1-lec16/" title="16-设计模式">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">16-设计模式</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/05/11/2023Spring/everyday/day10/leetcode-10-0422/" title="leetcode-10-0422">
+                        <span class="hidden-mobile">leetcode-10-0422</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"jCjgzQRn50iDMD3MNA3AliGs-gzGzoHsz","appKey":"UqtdOKia5Aac1q2fqz5lux0u","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <span>zss</span></a> <i class="iconfont icon-love"></i> <span>lbb</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+  <script defer>
+    if (document.getElementById('hbePass')) {
+      Fluid.utils.waitElementLoaded('hbe-prefix', function() {
+        var hbePrefix = document.querySelector('hbe-prefix');
+        hbePrefix.parentElement.classList.add('markdown-body');
+        Fluid.utils.retry(function() {
+          if (Fluid.boot && Fluid.boot.refresh) {
+            Fluid.boot.refresh();
+            return true;
+          }
+        }, 100, 10);
+      })
+    }
+  </script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
